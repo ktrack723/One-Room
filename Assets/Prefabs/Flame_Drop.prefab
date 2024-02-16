@@ -216,3 +216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91ec6fb7ab444d34b84bf668b8b1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  shadow: {fileID: 4611656432728273703, guid: 91800f0d330834ffb87cdeebfebe84b0, type: 3}
+  URUKManager: {fileID: 0}
+  smoothTime: 1
+  instancedShadow: {fileID: 0}
+  currentVelocity: {x: 0, y: 0, z: 0}

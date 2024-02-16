@@ -20,6 +20,8 @@ public class csFlameDrop : MonoBehaviour
 
     [Header("Parameters")]
 
+    [SerializeField] private float dropSpeed;
+
     [SerializeField] private float smoothTime;
 
     [Header("Debug")]
@@ -27,6 +29,8 @@ public class csFlameDrop : MonoBehaviour
     [SerializeField] private GameObject instancedShadow;
 
     [SerializeField] private Vector3 currentVelocity;
+
+    [SerializeField] private float startHeight;
 
 
 
@@ -43,17 +47,28 @@ public class csFlameDrop : MonoBehaviour
     
     void Update()
     {
+        // Track
         Vector3 trackedPosition = Vector3.SmoothDamp(transform.position, player.transform.position, ref currentVelocity, smoothTime);
-
         transform.position = new Vector3(trackedPosition.x, 0, trackedPosition.z);
-
         instancedShadow.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+
+        // Drop
+        transform.Translate(Vector3.down * dropSpeed * Time.deltaTime);
+        shadow.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, transform.position.y / startHeight);
     }
 
 
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Floor")
+        {
+            Destroy(other.gameObject);
+        }
+
+        if (other.tag == "Player")
+        {
+            URUKManager.EndGame();
+        }
     }
 }

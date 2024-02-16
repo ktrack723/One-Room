@@ -8,13 +8,23 @@ public class csURUKManager : MonoBehaviour
 {
 
 
+
     private void Start()
     {
         
     }
 
+
+
     private void Update()
     {
         
+    }
+
+
+
+    public void EndGame()
+    {
+
     }
 }
