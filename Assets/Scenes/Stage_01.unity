@@ -2017,6 +2017,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: House
       objectReference: {fileID: 0}
+    - target: {fileID: 877033372617224813, guid: fa933b67179cf4fa79ca2c55d70338ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8762172622399006204, guid: fa933b67179cf4fa79ca2c55d70338ca,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -2873,6 +2878,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bbaru_Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219762903860370770, guid: e3f605c7f033847318354b9d04ce105a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3219762903860370770, guid: e3f605c7f033847318354b9d04ce105a,
         type: 3}
