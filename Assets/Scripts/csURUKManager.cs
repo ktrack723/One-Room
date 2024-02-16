@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Linq;
 
 
@@ -11,7 +12,9 @@ public class csURUKManager : MonoBehaviour
 
     [SerializeField] private float speedMultiplier;
 
-    [SerializeField] private string StageNumber;
+    [SerializeField] private string stageNumber;
+
+    [SerializeField] private string nextStage;
 
     [SerializeField] private SpriteRenderer URUK_renderer;
 
@@ -24,13 +27,13 @@ public class csURUKManager : MonoBehaviour
     [SerializeField] private Sprite URUK_Happy;
     [SerializeField] private Sprite URUK_Sad;
 
-    [SerializeField] private GameObject Anchor_Flame;
+    [SerializeField] private GameObject anchor_Flame;
 
-    [SerializeField] private GameObject Flame_Rise;
+    [SerializeField] private GameObject flame_Rise;
 
     [Header("Debug")]
 
-    [SerializeField] private List<GameObject> floors;
+    public List<GameObject> floors;
 
     [SerializeField] private int flameCount;
 
@@ -42,7 +45,7 @@ public class csURUKManager : MonoBehaviour
     {
         floors = GameObject.FindGameObjectsWithTag("Floor").ToList();
 
-        StartCoroutine(StageNumber);
+        StartCoroutine(stageNumber);
     }
 
 
@@ -66,13 +69,35 @@ public class csURUKManager : MonoBehaviour
 
     private IEnumerator Stage01()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
 
         yield return StartCoroutine(ShootFlame(3));
 
         yield return new WaitForSeconds(1);
 
         yield return StartCoroutine(ShootFlame(3));
+
+        yield return new WaitForSeconds(1);
+
+        DetermineURUKFeeling();
+
+        yield return new WaitForSeconds(3);
+
+        if (URUK_renderer.sprite == URUK_Happy)
+        {
+            if (nextStage != string.Empty)
+            {
+                SceneManager.LoadScene(nextStage);
+            }
+            else
+            {
+                GoodEnding();
+            }
+        }
+        else
+        {
+            BadEnding();
+        }
     }
 
 
@@ -107,7 +132,7 @@ public class csURUKManager : MonoBehaviour
 
         for (int i = 0; i < flameCount; i++)
         {
-            Instantiate(Flame_Rise, Anchor_Flame.transform.position, Quaternion.identity);
+            Instantiate(flame_Rise, anchor_Flame.transform.position, Quaternion.identity);
 
             yield return new WaitForSeconds(2.0f / speedMultiplier);
         }
@@ -119,8 +144,29 @@ public class csURUKManager : MonoBehaviour
 
 
 
-    public void EndGame()
+    public void DetermineURUKFeeling()
     {
+        if (floors.Count == 1)
+        {
+            URUK_renderer.sprite = URUK_Happy;
+        }
+        else
+        {
+            URUK_renderer.sprite = URUK_Sad;
+        }
+    }
 
+
+
+    public void GoodEnding()
+    {
+        Debug.Log("GoodEnding!");
+    }
+
+
+
+    public void BadEnding()
+    {
+        Debug.Log("BadEnding!");
     }
 }

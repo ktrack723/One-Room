@@ -274,7 +274,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 1
-  StageNumber: Stage01
+  stageNumber: Stage01
+  isLatStage: 0
   URUK_renderer: {fileID: 1133038398}
   URUK_Dumb: {fileID: 21300000, guid: 129362ba3378540d592232c1b645bd0b, type: 3}
   URUK_Eat_01: {fileID: 21300000, guid: 99d3cae3450c741d1a0392e3b963690a, type: 3}
@@ -284,8 +285,8 @@ MonoBehaviour:
   URUK_Fire_02: {fileID: 21300000, guid: fa4c9057833e64a7f9850a58dee34e5b, type: 3}
   URUK_Happy: {fileID: 21300000, guid: 5018efab3fb7e4584a2aa530321c0de5, type: 3}
   URUK_Sad: {fileID: 21300000, guid: a06f95290d4f54dde8ad55245bbdd5ca, type: 3}
-  Anchor_Flame: {fileID: 2098576989}
-  Flame_Rise: {fileID: 9155342968542811601, guid: 5dc5cbbdb3e6c49dd9c0ee58e740812a,
+  anchor_Flame: {fileID: 2098576989}
+  flame_Rise: {fileID: 9155342968542811601, guid: 5dc5cbbdb3e6c49dd9c0ee58e740812a,
     type: 3}
   floors: []
   flameCount: 3
@@ -2607,7 +2608,7 @@ PrefabInstance:
     - target: {fileID: 1239501282832180524, guid: 2c21da2fb38754ce6ab3d492ede9a4b8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 1239501282832180524, guid: 2c21da2fb38754ce6ab3d492ede9a4b8,
         type: 3}

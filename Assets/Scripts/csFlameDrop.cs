@@ -42,7 +42,7 @@ public class csFlameDrop : MonoBehaviour
 
         instancedShadow = Instantiate(shadow, player.transform.position, Quaternion.identity);
 
-        shadow.transform.localScale = Vector3.zero;
+        instancedShadow.transform.localScale = Vector3.zero;
 
         startHeight = transform.position.y;
     }
@@ -52,7 +52,7 @@ public class csFlameDrop : MonoBehaviour
     void Update()
     {
         // Track
-        if (transform.position.y > 3.5f)
+        if (transform.position.y > 5f)
         {
             Vector3 trackedPosition = Vector3.SmoothDamp(transform.position, player.transform.position, ref currentVelocity, smoothTime);
             transform.position = new Vector3(trackedPosition.x, transform.position.y, trackedPosition.z);
@@ -87,6 +87,8 @@ public class csFlameDrop : MonoBehaviour
 
         if (other.CompareTag("Floor") == true)
         {
+            URUKManager.floors.Remove(other.gameObject);
+
             Destroy(other.gameObject);
 
             Destroy(gameObject);
@@ -94,7 +96,7 @@ public class csFlameDrop : MonoBehaviour
 
         if (other.CompareTag("Player") == true)
         {
-            URUKManager.EndGame();
+            URUKManager.BadEnding();
 
             Destroy(gameObject);
         }

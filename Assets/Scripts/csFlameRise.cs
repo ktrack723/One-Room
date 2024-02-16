@@ -8,7 +8,7 @@ public class csFlameRise : MonoBehaviour
 {
     [Header("Assigned")]
 
-    [SerializeField] private GameObject Flame_Drop;
+    [SerializeField] private GameObject flame_Drop;
 
     [SerializeField] private Vector3 fixedVelocity;
 
@@ -27,7 +27,7 @@ public class csFlameRise : MonoBehaviour
 
         if (transform.position.y > 12)
         {
-            Instantiate(Flame_Drop);
+            Instantiate(flame_Drop);
 
             Destroy(gameObject);
         }
