@@ -74,7 +74,10 @@ public class csFlameDrop : MonoBehaviour
 
     private void OnDestroy()
     {
-        URUKManager.GetComponent<AudioSource>().PlayOneShot(boomClip, 1.275f);
+        if (URUKManager != null)
+        {
+            URUKManager.GetComponent<AudioSource>().PlayOneShot(boomClip, 1.275f);
+        }
 
         Destroy(instancedShadow);
     }
@@ -99,9 +102,11 @@ public class csFlameDrop : MonoBehaviour
 
         if (other.CompareTag("Player") == true)
         {
+            Destroy(GameObject.FindGameObjectWithTag("BGM"));
+
             SceneManager.LoadScene("Death");
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

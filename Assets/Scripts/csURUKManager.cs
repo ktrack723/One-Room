@@ -92,27 +92,55 @@ public class csURUKManager : MonoBehaviour
 
         yield return StartCoroutine(ShootFlame(3));
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4.25f);
 
         DetermineURUKFeeling();
 
         yield return new WaitForSeconds(5);
 
-        if (URUK_renderer.sprite == URUK_Happy)
-        {
-            if (nextStage != string.Empty)
-            {
-                TransitionManager.Instance().Transition(nextStage, transitionSettings, 0);
-            }
-            else
-            {
-                GoodEnding();
-            }
-        }
-        else
-        {
-            BadEnding();
-        }
+        DetermineEnding();
+    }
+
+
+
+    private IEnumerator Stage_02()
+    {
+        yield return new WaitForSeconds(3);
+
+        yield return StartCoroutine(ShootFlame(4));
+
+        yield return new WaitForSeconds(1);
+
+        yield return StartCoroutine(ShootFlame(3));
+
+        yield return new WaitForSeconds(4.25f);
+
+        DetermineURUKFeeling();
+
+        yield return new WaitForSeconds(5);
+
+        DetermineEnding();
+    }
+
+
+
+    private IEnumerator Stage_03()
+    {
+        yield return new WaitForSeconds(3);
+
+        yield return StartCoroutine(ShootFlame(3));
+
+        yield return new WaitForSeconds(1);
+
+        yield return StartCoroutine(ShootFlame(3));
+
+        yield return new WaitForSeconds(4.25f);
+
+        DetermineURUKFeeling();
+
+        yield return new WaitForSeconds(5);
+
+        DetermineEnding();
     }
 
 
@@ -185,7 +213,28 @@ public class csURUKManager : MonoBehaviour
 
 
 
-    public void GoodEnding()
+    private void DetermineEnding()
+    {
+        if (URUK_renderer.sprite == URUK_Happy)
+        {
+            if (nextStage != string.Empty)
+            {
+                TransitionManager.Instance().Transition(nextStage, transitionSettings, 0);
+            }
+            else
+            {
+                GoodEnding();
+            }
+        }
+        else
+        {
+            BadEnding();
+        }
+    }
+
+
+
+    private void GoodEnding()
     {
         Debug.Log("GoodEnding!");
 
@@ -194,7 +243,7 @@ public class csURUKManager : MonoBehaviour
 
 
 
-    public void BadEnding()
+    private void BadEnding()
     {
         Debug.Log("BadEnding!");
 

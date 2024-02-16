@@ -13,6 +13,8 @@ public class csHeaven : MonoBehaviour
 
     [SerializeField] private bool isRealHeaven;
 
+    private bool isTransitioning;
+
 
 
     void Start()
@@ -24,11 +26,18 @@ public class csHeaven : MonoBehaviour
 
     void Update()
     {
+        if (isTransitioning == true)
+        {
+            return;
+        }
+
         if (isRealHeaven)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 TransitionManager.Instance().Transition("Stage_01", transitionSettings, 0);
+
+                isTransitioning = true;
             }
         }
         else
@@ -36,6 +45,8 @@ public class csHeaven : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Backspace))
             {
                 TransitionManager.Instance().Transition("Heaven", transitionSettings, 0);
+
+                isTransitioning = true;
             }
         }
     }

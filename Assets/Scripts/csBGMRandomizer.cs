@@ -19,11 +19,6 @@ public class csBGMRandomizer : MonoBehaviour
 
     private void Awake()
     {
-        if (SceneManager.GetActiveScene().name == "Death")
-        {
-            return;
-        }
-
         DontDestroyOnLoad(gameObject);
     }
 

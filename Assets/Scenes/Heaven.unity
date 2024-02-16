@@ -3661,6 +3661,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4563169319082350695, guid: 7b6c6eb2541d042268db7ed0b121f137,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.1625
+      objectReference: {fileID: 0}
     - target: {fileID: 8328463318038532118, guid: 7b6c6eb2541d042268db7ed0b121f137,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3714,6 +3719,11 @@ PrefabInstance:
     - target: {fileID: 9027424933259853225, guid: 7b6c6eb2541d042268db7ed0b121f137,
         type: 3}
       propertyPath: m_Name
+      value: BGM
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027424933259853225, guid: 7b6c6eb2541d042268db7ed0b121f137,
+        type: 3}
+      propertyPath: m_TagString
       value: BGM
       objectReference: {fileID: 0}
     m_RemovedComponents: []
