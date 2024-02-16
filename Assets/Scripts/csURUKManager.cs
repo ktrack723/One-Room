@@ -19,8 +19,9 @@ public class csURUKManager : MonoBehaviour
     [SerializeField] private Sprite URUK_Happy;
     [SerializeField] private Sprite URUK_Sad;
 
+    [SerializeField] private GameObject Anchor_Flame;
+
     [SerializeField] private GameObject Flame_Rise;
-    [SerializeField] private GameObject Flame_Drop;
 
     [Header("Debug")]
 
@@ -39,7 +40,17 @@ public class csURUKManager : MonoBehaviour
 
     private void Update()
     {
-        
+        if (isFiring == true)
+        {
+            if (URUK_renderer.sprite == URUK_Eat_02)
+            {
+                URUK_renderer.sprite = URUK_Eat_01;
+            }
+            else
+            {
+                URUK_renderer.sprite = URUK_Eat_02;
+            }
+        }
     }
 
 
@@ -53,8 +64,6 @@ public class csURUKManager : MonoBehaviour
 
     private IEnumerator ShootFlame()
     {
-
-
         URUK_renderer.sprite = URUK_Eat_01;
 
         for (int i = 0; i < flameCount; i++)
@@ -86,12 +95,14 @@ public class csURUKManager : MonoBehaviour
 
         for (int i = 0; i < flameCount; i++)
         {
+            Instantiate(Flame_Rise, Anchor_Flame.transform.position, Quaternion.identity);
 
-
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1.5f);
         }
 
         isFiring = false;
+
+        URUK_renderer.sprite = URUK_Dumb;
     }
 
 
