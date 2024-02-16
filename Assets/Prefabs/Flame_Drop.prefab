@@ -129,6 +129,8 @@ GameObject:
   - component: {fileID: 3362535536640146622}
   - component: {fileID: 2893720406475424081}
   - component: {fileID: 3752580756852565920}
+  - component: {fileID: 4637742812234877516}
+  - component: {fileID: 1297242437730104195}
   m_Layer: 0
   m_Name: Flame_Drop
   m_TagString: Untagged
@@ -219,6 +221,56 @@ MonoBehaviour:
   player: {fileID: 0}
   shadow: {fileID: 4611656432728273703, guid: 91800f0d330834ffb87cdeebfebe84b0, type: 3}
   URUKManager: {fileID: 0}
+  dropSpeed: 2
   smoothTime: 1
   instancedShadow: {fileID: 0}
   currentVelocity: {x: 0, y: 0, z: 0}
+  startHeight: 0
+--- !u!135 &4637742812234877516
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420806041777783920}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: -0.5, y: 0.5, z: 0}
+--- !u!54 &1297242437730104195
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420806041777783920}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
