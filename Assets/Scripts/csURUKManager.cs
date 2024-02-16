@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using EasyTransition;
 
 
 
@@ -41,6 +42,8 @@ public class csURUKManager : MonoBehaviour
     [SerializeField] private AudioClip happyClip;
     [SerializeField] private AudioClip sadClip;
 
+    [SerializeField] private TransitionSettings transitionSettings;
+
     [Header("Debug")]
 
     public List<GameObject> floors;
@@ -58,6 +61,8 @@ public class csURUKManager : MonoBehaviour
         floors = GameObject.FindGameObjectsWithTag("Floor").ToList();
 
         StartCoroutine(stageNumber);
+
+        TransitionManager.Instance().Transition(nextStage, transitionSettings, 0);
     }
 
 
@@ -99,7 +104,7 @@ public class csURUKManager : MonoBehaviour
         {
             if (nextStage != string.Empty)
             {
-                SceneManager.LoadScene(nextStage);
+                TransitionManager.Instance().Transition(nextStage, transitionSettings, 0);
             }
             else
             {
