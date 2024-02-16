@@ -25,12 +25,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2572287932374571905}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.029, y: -0.485, z: -1.21}
-  m_LocalScale: {x: 0.14817655, y: 0.39979294, z: 0.37037027}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.028999977, y: -0.48500013, z: -1.2100002}
+  m_LocalScale: {x: 0.14817655, y: 0.39979297, z: 0.37037027}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2757593211931500139}
+  m_Father: {fileID: 2830280354103802630}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!212 &3697224787085296225
 SpriteRenderer:
@@ -110,11 +110,11 @@ Transform:
   m_GameObject: {fileID: 3669793128421488750}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5614223, y: 0.5614223, z: 0.42988956, w: 0.42988956}
-  m_LocalPosition: {x: 0.25200006, y: 0.025000032, z: -3.13602}
-  m_LocalScale: {x: 0.14817655, y: 0.29, z: 0.3703704}
+  m_LocalPosition: {x: 0.25200006, y: 0.025000032, z: -3.136021}
+  m_LocalScale: {x: 0.14817655, y: 0.28999996, z: 0.37037036}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2757593211931500139}
+  m_Father: {fileID: 2830280354103802630}
   m_LocalEulerAnglesHint: {x: 0, y: 105.116, z: 90}
 --- !u!212 &1946191703141199884
 SpriteRenderer:
@@ -194,11 +194,11 @@ Transform:
   m_GameObject: {fileID: 3705393025550300995}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.481, y: 0.025, z: -1.25}
-  m_LocalScale: {x: 0.14817655, y: 0.399793, z: 0.3703704}
+  m_LocalPosition: {x: 0.48100004, y: 0.024999987, z: -1.2500002}
+  m_LocalScale: {x: 0.14817657, y: 0.399793, z: 0.3703704}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2757593211931500139}
+  m_Father: {fileID: 2830280354103802630}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!212 &3837545256009433680
 SpriteRenderer:
@@ -278,11 +278,11 @@ Transform:
   m_GameObject: {fileID: 3712519741721950791}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.497, y: 0.025, z: -1.25}
-  m_LocalScale: {x: 0.14817655, y: 0.399793, z: 0.3703704}
+  m_LocalPosition: {x: -0.49700004, y: 0.024999987, z: -1.2500002}
+  m_LocalScale: {x: 0.14817657, y: 0.399793, z: 0.3703704}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2757593211931500139}
+  m_Father: {fileID: 2830280354103802630}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!212 &3514121488495778493
 SpriteRenderer:
@@ -336,6 +336,73 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &5328581171589485075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 137601719477697654}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &137601719477697654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328581171589485075}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3773585, y: 1, z: 0.3773584}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2757593211931500139}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8335055997148139893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2830280354103802630}
+  m_Layer: 0
+  m_Name: House
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2830280354103802630
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335055997148139893}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 320292740885325725}
+  - {fileID: 4715352969328325120}
+  - {fileID: 888133795200815066}
+  - {fileID: 336000199514392898}
+  - {fileID: 5663336913373463556}
+  m_Father: {fileID: 2757593211931500139}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8506005713215776962
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +415,7 @@ GameObject:
   - component: {fileID: 6173252167877280556}
   - component: {fileID: 3349043157334570339}
   m_Layer: 0
-  m_Name: FloorTile
+  m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -368,11 +435,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5424006592820678500}
-  - {fileID: 320292740885325725}
-  - {fileID: 4715352969328325120}
-  - {fileID: 888133795200815066}
-  - {fileID: 336000199514392898}
-  - {fileID: 5663336913373463556}
+  - {fileID: 2830280354103802630}
+  - {fileID: 137601719477697654}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
 --- !u!33 &6173252167877280556
@@ -534,11 +598,11 @@ Transform:
   m_GameObject: {fileID: 8949062514946611444}
   serializedVersion: 2
   m_LocalRotation: {x: -0.566139, y: -0.566139, z: 0.4236586, w: 0.4236586}
-  m_LocalPosition: {x: -0.23, y: 0.025, z: -3.22}
-  m_LocalScale: {x: 0.14817655, y: 0.29, z: 0.3703704}
+  m_LocalPosition: {x: -0.22999997, y: 0.025000032, z: -3.220001}
+  m_LocalScale: {x: 0.14817655, y: 0.29, z: 0.37037042}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2757593211931500139}
+  m_Father: {fileID: 2830280354103802630}
   m_LocalEulerAnglesHint: {x: 0, y: -106.383, z: 90}
 --- !u!212 &5721106857238346495
 SpriteRenderer:
