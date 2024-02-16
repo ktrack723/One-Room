@@ -8,6 +8,10 @@ using System.Linq;
 
 public class csURUKManager : MonoBehaviour
 {
+    [Header("Fetch on start")]
+
+    [SerializeField] private AudioSource audioSource;
+
     [Header("Assigned")]
 
     [SerializeField] private float speedMultiplier;
@@ -31,6 +35,12 @@ public class csURUKManager : MonoBehaviour
 
     [SerializeField] private GameObject flame_Rise;
 
+    [SerializeField] private AudioClip eatClip;
+    [SerializeField] private AudioClip chargeClip;
+    [SerializeField] private AudioClip fireClip;
+    [SerializeField] private AudioClip happyClip;
+    [SerializeField] private AudioClip sadClip;
+
     [Header("Debug")]
 
     public List<GameObject> floors;
@@ -43,6 +53,8 @@ public class csURUKManager : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         floors = GameObject.FindGameObjectsWithTag("Floor").ToList();
 
         StartCoroutine(stageNumber);
@@ -110,6 +122,8 @@ public class csURUKManager : MonoBehaviour
 
         for (int i = 0; i < flameCount - 1; i++)
         {
+            audioSource.PlayOneShot(eatClip);
+
             yield return new WaitForSeconds(1.0f / speedMultiplier);
 
             if (URUK_renderer.sprite == URUK_Eat_02)
@@ -124,6 +138,8 @@ public class csURUKManager : MonoBehaviour
 
         yield return new WaitForSeconds(1.0f / speedMultiplier);
 
+        audioSource.PlayOneShot(chargeClip);
+
         URUK_renderer.sprite = URUK_Charge;
 
         yield return new WaitForSeconds(1.5f / speedMultiplier);
@@ -132,6 +148,8 @@ public class csURUKManager : MonoBehaviour
 
         for (int i = 0; i < flameCount; i++)
         {
+            audioSource.PlayOneShot(fireClip);
+
             Instantiate(flame_Rise, anchor_Flame.transform.position, Quaternion.identity);
 
             yield return new WaitForSeconds(2.0f / speedMultiplier);
@@ -148,10 +166,14 @@ public class csURUKManager : MonoBehaviour
     {
         if (floors.Count == 1)
         {
+            audioSource.PlayOneShot(happyClip);
+
             URUK_renderer.sprite = URUK_Happy;
         }
         else
         {
+            audioSource.PlayOneShot(sadClip);
+
             URUK_renderer.sprite = URUK_Sad;
         }
     }
