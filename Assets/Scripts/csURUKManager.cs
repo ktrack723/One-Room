@@ -77,7 +77,7 @@ public class csURUKManager : MonoBehaviour
 
         yield return StartCoroutine(ShootFlame(3));
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
 
         DetermineURUKFeeling();
 

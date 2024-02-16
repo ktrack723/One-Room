@@ -52,12 +52,10 @@ public class csFlameDrop : MonoBehaviour
     void Update()
     {
         // Track
-        if (transform.position.y > 5f)
-        {
-            Vector3 trackedPosition = Vector3.SmoothDamp(transform.position, player.transform.position, ref currentVelocity, smoothTime);
-            transform.position = new Vector3(trackedPosition.x, transform.position.y, trackedPosition.z);
-            instancedShadow.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-        }
+        Vector3 trackedPosition = Vector3.SmoothDamp(transform.position, player.transform.position, ref currentVelocity, smoothTime);
+        transform.position = new Vector3(trackedPosition.x, transform.position.y, trackedPosition.z);
+        instancedShadow.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        smoothTime = 0.25f + 5f / transform.position.y;
 
         // Drop
         transform.Translate(Vector3.down * dropSpeed * Time.deltaTime);
