@@ -19,7 +19,11 @@ public class csBGMRandomizer : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         audioSource.clip = BGMs[Random.Range(0, BGMs.Count)];
+
+        audioSource.Play();
     }
+
+
 
     void Update()
     {
