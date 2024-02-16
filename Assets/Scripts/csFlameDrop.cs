@@ -61,22 +61,30 @@ public class csFlameDrop : MonoBehaviour
         if (transform.position.y < 2f)
         {
             Destroy(gameObject);
-
-            Destroy(instancedShadow);
         }
+    }
+
+
+
+    private void OnDestroy()
+    {
+        Destroy(instancedShadow);
     }
 
 
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "House")
+        {
+            Destroy(gameObject);
+        }
+
         if (other.tag == "Floor")
         {
             Destroy(other.gameObject);
 
             Destroy(gameObject);
-
-            Destroy(instancedShadow);
         }
 
         if (other.tag == "Player")
@@ -84,8 +92,6 @@ public class csFlameDrop : MonoBehaviour
             URUKManager.EndGame();
 
             Destroy(gameObject);
-
-            Destroy(instancedShadow);
         }
     }
 }
