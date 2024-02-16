@@ -8,6 +8,8 @@ public class csURUKManager : MonoBehaviour
 {
     [Header("Assigned")]
 
+    [SerializeField] private float speedMultiplier;
+
     [SerializeField] private string StageNumber;
 
     [SerializeField] private SpriteRenderer URUK_renderer;
@@ -44,13 +46,13 @@ public class csURUKManager : MonoBehaviour
     {
         if (isFiring == true)
         {
-            if (URUK_renderer.sprite == URUK_Eat_02)
+            if (URUK_renderer.sprite == URUK_Fire_02)
             {
-                URUK_renderer.sprite = URUK_Eat_01;
+                URUK_renderer.sprite = URUK_Fire_01;
             }
             else
             {
-                URUK_renderer.sprite = URUK_Eat_02;
+                URUK_renderer.sprite = URUK_Fire_02;
             }
         }
     }
@@ -69,6 +71,7 @@ public class csURUKManager : MonoBehaviour
     private void ShootFlameBy(int arg)
     {
         flameCount = arg;
+
         StartCoroutine("ShootFlame");
     }
 
@@ -80,7 +83,7 @@ public class csURUKManager : MonoBehaviour
 
         for (int i = 0; i < flameCount; i++)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f / speedMultiplier);
 
             if (i == 0)
             {
@@ -97,11 +100,11 @@ public class csURUKManager : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f / speedMultiplier);
 
         URUK_renderer.sprite = URUK_Charge;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.5f / speedMultiplier);
 
         isFiring = true;
 
@@ -109,7 +112,7 @@ public class csURUKManager : MonoBehaviour
         {
             Instantiate(Flame_Rise, Anchor_Flame.transform.position, Quaternion.identity);
 
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1.0f / speedMultiplier);
         }
 
         isFiring = false;

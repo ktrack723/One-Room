@@ -248,3 +248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9324e82a94b446a9480c093b96533c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Flame_Drop: {fileID: 4863603141875992814, guid: a44eb8972da8b468e83ee38fb560444f,
+    type: 3}
+  fixedVelocity: {x: -3, y: 3, z: 0}

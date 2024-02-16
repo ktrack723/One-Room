@@ -6,6 +6,12 @@ using UnityEngine;
 
 public class csFlameRise : MonoBehaviour
 {
+    [Header("Assigned")]
+
+    [SerializeField] private GameObject Flame_Drop;
+
+    [SerializeField] private Vector3 fixedVelocity;
+
 
 
     void Start()
@@ -17,6 +23,13 @@ public class csFlameRise : MonoBehaviour
 
     void Update()
     {
-        
+        transform.Translate(fixedVelocity * Time.deltaTime);
+
+        if (transform.position.y > 12)
+        {
+            Instantiate(Flame_Drop);
+
+            Destroy(gameObject);
+        }
     }
 }

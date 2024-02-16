@@ -34,9 +34,11 @@ public class csFlameDrop : MonoBehaviour
 
     void Start()
     {
+        URUKManager = GameObject.FindGameObjectWithTag("URUKManager").GetComponent<csURUKManager>();
+
         player = GameObject.FindGameObjectWithTag("Player");
 
-        URUKManager = GameObject.FindGameObjectWithTag("URUKManager").GetComponent<csURUKManager>();
+        transform.position = new Vector3(player.transform.position.x, 12, player.transform.position.z);
 
         instancedShadow = Instantiate(shadow, player.transform.position, Quaternion.identity);
 
@@ -50,9 +52,12 @@ public class csFlameDrop : MonoBehaviour
     void Update()
     {
         // Track
-        Vector3 trackedPosition = Vector3.SmoothDamp(transform.position, player.transform.position, ref currentVelocity, smoothTime);
-        transform.position = new Vector3(trackedPosition.x, transform.position.y, trackedPosition.z);
-        instancedShadow.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        if (transform.position.y > 6)
+        {
+            Vector3 trackedPosition = Vector3.SmoothDamp(transform.position, player.transform.position, ref currentVelocity, smoothTime);
+            transform.position = new Vector3(trackedPosition.x, transform.position.y, trackedPosition.z);
+            instancedShadow.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        }
 
         // Drop
         transform.Translate(Vector3.down * dropSpeed * Time.deltaTime);
