@@ -9,14 +9,12 @@ public class csFlameDrop : MonoBehaviour
     [Header("Fetch on start")]
 
     [SerializeField] private GameObject player;
-    
+
+    [SerializeField] private csURUKManager URUKManager;
+
     [Header("Assigned")]
 
     [SerializeField] private GameObject shadow;
-
-    [Header("DI")]
-
-    [SerializeField] private csURUKManager URUKManager;
 
     [Header("Parameters")]
 
@@ -38,7 +36,9 @@ public class csFlameDrop : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
-        instancedShadow = Instantiate(shadow, player.transform.position + new Vector3(0, 0,05f, 0), Quaternion.identity);
+        URUKManager = GameObject.FindGameObjectWithTag("URUKManager").GetComponent<csURUKManager>();
+
+        instancedShadow = Instantiate(shadow, player.transform.position, Quaternion.identity);
 
         shadow.transform.localScale = Vector3.zero;
 
@@ -56,7 +56,7 @@ public class csFlameDrop : MonoBehaviour
 
         // Drop
         transform.Translate(Vector3.up * dropSpeed * Time.deltaTime);
-        instancedShadow.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, transform.position.y / startHeight);
+        instancedShadow.transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, transform.position.y / startHeight);
 
         if (transform.position.y < 2f)
         {
