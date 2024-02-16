@@ -170,6 +170,31 @@ public class csURUKManager : MonoBehaviour
 
 
 
+    private IEnumerator Stage_05()
+    {
+        yield return new WaitForSeconds(3 / speedMultiplier);
+
+        yield return StartCoroutine(ShootFlame(1));
+
+        yield return new WaitForSeconds(1 / speedMultiplier);
+
+        yield return StartCoroutine(ShootFlame(3));
+
+        yield return new WaitForSeconds(1 / speedMultiplier);
+
+        yield return StartCoroutine(ShootFlame(4));
+
+        yield return new WaitForSeconds(4.25f / speedMultiplier);
+
+        DetermineURUKFeeling();
+
+        yield return new WaitForSeconds(5 / speedMultiplier);
+
+        DetermineEnding();
+    }
+
+
+
     private IEnumerator ShootFlame(int arg)
     {
         flameCount = arg;

@@ -277,7 +277,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   speedMultiplier: 1.25
   stageNumber: Stage_03
-  nextStage: 
+  nextStage: Stage_04
   URUK_renderer: {fileID: 1133038398}
   URUK_Dumb: {fileID: 21300000, guid: 129362ba3378540d592232c1b645bd0b, type: 3}
   URUK_Eat_01: {fileID: 21300000, guid: 99d3cae3450c741d1a0392e3b963690a, type: 3}
