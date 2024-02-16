@@ -16,6 +16,8 @@ public class csFlameDrop : MonoBehaviour
 
     [SerializeField] private GameObject shadow;
 
+    [SerializeField] private AudioClip boomClip;
+
     [Header("Parameters")]
 
     [SerializeField] private float dropSpeed;
@@ -71,6 +73,8 @@ public class csFlameDrop : MonoBehaviour
 
     private void OnDestroy()
     {
+        URUKManager.GetComponent<AudioSource>().PlayOneShot(boomClip, 1.275f);
+
         Destroy(instancedShadow);
     }
 
