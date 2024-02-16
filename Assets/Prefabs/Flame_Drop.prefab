@@ -136,7 +136,7 @@ MonoBehaviour:
   URUKManager: {fileID: 0}
   shadow: {fileID: 4611656432728273703, guid: 91800f0d330834ffb87cdeebfebe84b0, type: 3}
   boomClip: {fileID: 8300000, guid: e1dea75d4bf704e81b1fa5b52d4c990e, type: 3}
-  dropSpeed: 3.5
+  dropSpeed: 3.75
   smoothTime: 1
   instancedShadow: {fileID: 0}
   currentVelocity: {x: 0, y: 0, z: 0}

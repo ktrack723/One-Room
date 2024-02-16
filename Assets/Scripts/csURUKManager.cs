@@ -128,11 +128,11 @@ public class csURUKManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3 / speedMultiplier);
 
-        yield return StartCoroutine(ShootFlame(3));
+        yield return StartCoroutine(ShootFlame(5));
 
         yield return new WaitForSeconds(1 / speedMultiplier);
 
-        yield return StartCoroutine(ShootFlame(3));
+        yield return StartCoroutine(ShootFlame(2));
 
         yield return new WaitForSeconds(4.25f / speedMultiplier);
 
