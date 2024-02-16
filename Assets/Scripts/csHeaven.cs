@@ -11,6 +11,8 @@ public class csHeaven : MonoBehaviour
 
     [SerializeField] private TransitionSettings transitionSettings;
 
+    [SerializeField] private bool isRealHeaven;
+
 
 
     void Start()
@@ -22,9 +24,19 @@ public class csHeaven : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (isRealHeaven)
         {
-            TransitionManager.Instance().Transition("Stage_01", transitionSettings, 0);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                TransitionManager.Instance().Transition("Stage_01", transitionSettings, 0);
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Backspace))
+            {
+                TransitionManager.Instance().Transition("Heaven", transitionSettings, 0);
+            }
         }
     }
 }

@@ -188,6 +188,8 @@ public class csURUKManager : MonoBehaviour
     public void GoodEnding()
     {
         Debug.Log("GoodEnding!");
+
+        TransitionManager.Instance().Transition("Credits", transitionSettings, 0);
     }
 
 
@@ -195,5 +197,7 @@ public class csURUKManager : MonoBehaviour
     public void BadEnding()
     {
         Debug.Log("BadEnding!");
+
+        TransitionManager.Instance().Transition(stageNumber, transitionSettings, 0);
     }
 }
