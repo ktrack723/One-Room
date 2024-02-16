@@ -48,6 +48,8 @@ public class csFlameDrop : MonoBehaviour
         instancedShadow.transform.localScale = Vector3.zero;
 
         startHeight = transform.position.y;
+
+        dropSpeed *= URUKManager.speedMultiplier;
     }
 
 

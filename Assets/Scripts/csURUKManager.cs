@@ -15,7 +15,7 @@ public class csURUKManager : MonoBehaviour
 
     [Header("Assigned")]
 
-    [SerializeField] private float speedMultiplier;
+    public float speedMultiplier;
 
     [SerializeField] private string stageNumber;
 
@@ -126,19 +126,19 @@ public class csURUKManager : MonoBehaviour
 
     private IEnumerator Stage_03()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3 / speedMultiplier);
 
         yield return StartCoroutine(ShootFlame(3));
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1 / speedMultiplier);
 
         yield return StartCoroutine(ShootFlame(3));
 
-        yield return new WaitForSeconds(4.25f);
+        yield return new WaitForSeconds(4.25f / speedMultiplier);
 
         DetermineURUKFeeling();
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(5 / speedMultiplier);
 
         DetermineEnding();
     }
