@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rudy
+  m_Name: URUK
   m_Shader: {fileID: -6465566751694194690, guid: 90baeb9bf8f4f40209f843b3cdd695b8,
     type: 3}
   m_Parent: {fileID: 0}
@@ -43,9 +43,9 @@ Material:
     m_Ints: []
     m_Floats:
     - Vector1_3855326e3bf94096bfb1a84296b4fc42: 1
-    - Vector1_6f312750ee464dc8857cef9ba62bb780: 10
+    - Vector1_6f312750ee464dc8857cef9ba62bb780: 35
     - Vector1_9ca86548a99544f1b107e180a6516e32: 500
-    - Vector1_b5d889028a3b48fb83cb874e0e59cd38: 10
+    - Vector1_b5d889028a3b48fb83cb874e0e59cd38: 5
     - _Edge: 0.25
     - _Fade: 1
     - _QueueControl: 0
