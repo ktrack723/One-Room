@@ -67,7 +67,7 @@ public class csURUKManager : MonoBehaviour
 
 
 
-    private IEnumerator Stage01()
+    private IEnumerator Stage_01()
     {
         yield return new WaitForSeconds(3);
 
