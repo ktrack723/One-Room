@@ -38,7 +38,7 @@ public class csFlameDrop : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
-        instancedShadow = Instantiate(shadow, player.transform.position, Quaternion.identity);
+        instancedShadow = Instantiate(shadow, player.transform.position + new Vector3(0, 0,05f, 0), Quaternion.identity);
 
         shadow.transform.localScale = Vector3.zero;
 
@@ -55,8 +55,15 @@ public class csFlameDrop : MonoBehaviour
         instancedShadow.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
 
         // Drop
-        transform.Translate(Vector3.down * dropSpeed * Time.deltaTime);
-        shadow.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, transform.position.y / startHeight);
+        transform.Translate(Vector3.up * dropSpeed * Time.deltaTime);
+        instancedShadow.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, transform.position.y / startHeight);
+
+        if (transform.position.y < 2f)
+        {
+            Destroy(gameObject);
+
+            Destroy(instancedShadow);
+        }
     }
 
 
@@ -66,11 +73,19 @@ public class csFlameDrop : MonoBehaviour
         if (other.tag == "Floor")
         {
             Destroy(other.gameObject);
+
+            Destroy(gameObject);
+
+            Destroy(instancedShadow);
         }
 
         if (other.tag == "Player")
         {
             URUKManager.EndGame();
+
+            Destroy(gameObject);
+
+            Destroy(instancedShadow);
         }
     }
 }
