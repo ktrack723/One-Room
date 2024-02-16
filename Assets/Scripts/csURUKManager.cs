@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 
 
@@ -29,6 +30,8 @@ public class csURUKManager : MonoBehaviour
 
     [Header("Debug")]
 
+    [SerializeField] private List<GameObject> floors;
+
     [SerializeField] private int flameCount;
 
     [SerializeField] private bool isFiring;
@@ -37,6 +40,8 @@ public class csURUKManager : MonoBehaviour
 
     private void Start()
     {
+        floors = GameObject.FindGameObjectsWithTag("Floor").ToList();
+
         StartCoroutine(StageNumber);
     }
 
@@ -61,9 +66,9 @@ public class csURUKManager : MonoBehaviour
 
     private IEnumerator Stage01()
     {
-        ShootFlameBy(3);
+        yield return new WaitForSeconds(1);
 
-        return null;
+        ShootFlameBy(3);
     }
 
 
