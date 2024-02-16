@@ -121,9 +121,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: af31ba1ca429a4c6587b8e2d119644d8, type: 3}
+      value: {fileID: 21300000, guid: 399e35b7bbfdc483b84fb12ca248b7bd, type: 3}
     - time: 0.25
-      value: {fileID: 21300000, guid: af31ba1ca429a4c6587b8e2d119644d8, type: 3}
+      value: {fileID: 21300000, guid: 399e35b7bbfdc483b84fb12ca248b7bd, type: 3}
     attribute: m_Sprite
     path: Rudy_Face
     classID: 212
@@ -182,8 +182,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: af31ba1ca429a4c6587b8e2d119644d8, type: 3}
-    - {fileID: 21300000, guid: af31ba1ca429a4c6587b8e2d119644d8, type: 3}
+    - {fileID: 21300000, guid: 399e35b7bbfdc483b84fb12ca248b7bd, type: 3}
+    - {fileID: 21300000, guid: 399e35b7bbfdc483b84fb12ca248b7bd, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
