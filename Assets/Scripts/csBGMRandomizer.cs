@@ -15,7 +15,7 @@ public class csBGMRandomizer : MonoBehaviour
 
     [SerializeField] private List<AudioClip> BGMs;
 
-    private static bool instanceExists;
+    public static bool instanceExists;
 
 
 

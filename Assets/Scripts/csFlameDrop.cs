@@ -106,6 +106,8 @@ public class csFlameDrop : MonoBehaviour
         {
             Destroy(GameObject.FindGameObjectWithTag("BGM"));
 
+            csBGMRandomizer.instanceExists = false;
+
             SceneManager.LoadScene("Death");
 
             //Destroy(gameObject);
