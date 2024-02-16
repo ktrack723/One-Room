@@ -43,9 +43,9 @@ Material:
     m_Ints: []
     m_Floats:
     - Vector1_3855326e3bf94096bfb1a84296b4fc42: 1
-    - Vector1_6f312750ee464dc8857cef9ba62bb780: 35
+    - Vector1_6f312750ee464dc8857cef9ba62bb780: 40
     - Vector1_9ca86548a99544f1b107e180a6516e32: 500
-    - Vector1_b5d889028a3b48fb83cb874e0e59cd38: 5
+    - Vector1_b5d889028a3b48fb83cb874e0e59cd38: 7.5
     - _Edge: 0.25
     - _Fade: 1
     - _QueueControl: 0

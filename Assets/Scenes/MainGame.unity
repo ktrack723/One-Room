@@ -273,17 +273,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e340ac385f42045edae808ee07c1a013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  URUK_renderer: {fileID: 0}
-  URUK_Dumb: {fileID: 0}
-  URUK_Eat_01: {fileID: 0}
-  URUK_Eat_02: {fileID: 0}
-  URUK_Charge: {fileID: 0}
-  URUK_Fire_01: {fileID: 0}
-  URUK_Fire_02: {fileID: 0}
-  URUK_Happy: {fileID: 0}
-  URUK_Sad: {fileID: 0}
+  URUK_renderer: {fileID: 1133038398}
+  URUK_Dumb: {fileID: 21300000, guid: 129362ba3378540d592232c1b645bd0b, type: 3}
+  URUK_Eat_01: {fileID: 21300000, guid: 99d3cae3450c741d1a0392e3b963690a, type: 3}
+  URUK_Eat_02: {fileID: 21300000, guid: cdddf38ba8f234731bc7337e8ee124f3, type: 3}
+  URUK_Charge: {fileID: 21300000, guid: ff2f15040d1a845929ff2cc5ee12375a, type: 3}
+  URUK_Fire_01: {fileID: 21300000, guid: 1134a2ec961284f9e8a9d364813a1b0f, type: 3}
+  URUK_Fire_02: {fileID: 21300000, guid: fa4c9057833e64a7f9850a58dee34e5b, type: 3}
+  URUK_Happy: {fileID: 21300000, guid: 5018efab3fb7e4584a2aa530321c0de5, type: 3}
+  URUK_Sad: {fileID: 21300000, guid: a06f95290d4f54dde8ad55245bbdd5ca, type: 3}
+  Anchor_Flame: {fileID: 0}
   Flame_Rise: {fileID: 0}
-  Flame_Drop: {fileID: 0}
   flameCount: 0
   isFiring: 0
 --- !u!1 &90570017
@@ -1958,7 +1958,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 215939af1ae0b49a4a520b90f8f566cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 129362ba3378540d592232c1b645bd0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
