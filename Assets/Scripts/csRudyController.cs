@@ -17,7 +17,9 @@ public class csRudyController : MonoBehaviour
     [Header("Debug")]
 
     [SerializeField] private bool isMoving;
+
     [SerializeField] private Vector3 velocity;
+    [SerializeField] private float dashVelocityMultiplier;
 
 
 
@@ -37,6 +39,13 @@ public class csRudyController : MonoBehaviour
 
     private void ProcessMoveInput()
     {
+        if (LeanTween.isTweening(gameObject) == true)
+        {
+            Move();
+
+            return;
+        }
+
         velocity = Vector3.zero;
 
         if (Input.GetKey(KeyCode.A) == true)
@@ -68,6 +77,35 @@ public class csRudyController : MonoBehaviour
 
         animator.SetBool("isMoving", isMoving);
 
-        transform.Translate(velocity * speed * Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Dash();
+        }
+
+        Move();
+    }
+
+
+
+    private void Dash()
+    {
+        LeanTween.value(gameObject, UpdateDash, 1, 5, 0.1f).setEaseInOutCubic().setOnComplete(()=>
+        {
+            LeanTween.value(gameObject, UpdateDash, 5, 1, 0.25f).setEaseInOutCubic();
+        });
+    }
+
+
+
+    private void UpdateDash(float arg)
+    {
+        dashVelocityMultiplier = arg;
+    }
+
+
+
+    private void Move()
+    {
+        transform.Translate((velocity * speed * dashVelocityMultiplier) * Time.deltaTime);
     }
 }
