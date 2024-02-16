@@ -61,8 +61,6 @@ public class csURUKManager : MonoBehaviour
         floors = GameObject.FindGameObjectsWithTag("Floor").ToList();
 
         StartCoroutine(stageNumber);
-
-        TransitionManager.Instance().Transition(nextStage, transitionSettings, 0);
     }
 
 

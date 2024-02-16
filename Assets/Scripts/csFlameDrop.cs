@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -98,7 +99,7 @@ public class csFlameDrop : MonoBehaviour
 
         if (other.CompareTag("Player") == true)
         {
-            URUKManager.BadEnding();
+            SceneManager.LoadScene("Death");
 
             Destroy(gameObject);
         }
