@@ -168,13 +168,13 @@ public class csURUKManager : MonoBehaviour
     {
         if (floors.Count == 1)
         {
-            audioSource.PlayOneShot(happyClip);
+            audioSource.PlayOneShot(happyClip, 1.1f);
 
             URUK_renderer.sprite = URUK_Happy;
         }
         else
         {
-            audioSource.PlayOneShot(sadClip);
+            audioSource.PlayOneShot(sadClip, 1.1f);
 
             URUK_renderer.sprite = URUK_Sad;
         }
