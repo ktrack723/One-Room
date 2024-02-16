@@ -120,11 +120,13 @@ public class csURUKManager : MonoBehaviour
 
         URUK_renderer.sprite = URUK_Eat_01;
 
+        audioSource.PlayOneShot(eatClip);
+
         for (int i = 0; i < flameCount - 1; i++)
         {
-            audioSource.PlayOneShot(eatClip);
-
             yield return new WaitForSeconds(1.0f / speedMultiplier);
+
+            audioSource.PlayOneShot(eatClip, 1.25f);
 
             if (URUK_renderer.sprite == URUK_Eat_02)
             {
@@ -142,7 +144,7 @@ public class csURUKManager : MonoBehaviour
 
         URUK_renderer.sprite = URUK_Charge;
 
-        yield return new WaitForSeconds(1.5f / speedMultiplier);
+        yield return new WaitForSeconds(2.5f / speedMultiplier);
 
         isFiring = true;
 

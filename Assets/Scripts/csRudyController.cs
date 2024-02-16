@@ -8,11 +8,17 @@ public class csRudyController : MonoBehaviour
 {
     [Header("Fetch on start")]
 
+    [SerializeField] private AudioSource audioSource;
+
     [SerializeField] private Animator animator;
 
     [Header("Assigned")]
 
     [SerializeField] private GameObject Bbaru;
+
+    [SerializeField] private AudioClip dashClip;
+    [SerializeField] private AudioClip getClip;
+    [SerializeField] private AudioClip hitClip;
 
     [Header("Parameters")]
 
@@ -31,6 +37,8 @@ public class csRudyController : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         animator = GetComponent<Animator>();
     }
 
@@ -97,6 +105,8 @@ public class csRudyController : MonoBehaviour
 
     private void Dash()
     {
+        audioSource.PlayOneShot(dashClip);
+
         LeanTween.value(gameObject, UpdateDash, 1, 5, 0.1f).setEaseInOutCubic().setOnComplete(()=>
         {
             LeanTween.value(gameObject, UpdateDash, 5, 1, 0.25f).setEaseInOutCubic();
@@ -125,12 +135,16 @@ public class csRudyController : MonoBehaviour
         {
             isHoldingBbaru = true;
 
+            audioSource.PlayOneShot(getClip);
+
             Destroy(other.gameObject);
         }
 
         if (other.CompareTag("House") == true && isHoldingBbaru == true)
         {
             isHoldingBbaru = false;
+
+            audioSource.PlayOneShot(hitClip);
 
             Destroy(other.gameObject);
         }
