@@ -126,7 +126,7 @@ public class csURUKManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1.0f / speedMultiplier);
 
-            audioSource.PlayOneShot(eatClip, 1.25f);
+            audioSource.PlayOneShot(eatClip, 1.5f);
 
             if (URUK_renderer.sprite == URUK_Eat_02)
             {
@@ -150,7 +150,7 @@ public class csURUKManager : MonoBehaviour
 
         for (int i = 0; i < flameCount; i++)
         {
-            audioSource.PlayOneShot(fireClip);
+            audioSource.PlayOneShot(fireClip, 0.8f);
 
             Instantiate(flame_Rise, anchor_Flame.transform.position, Quaternion.identity);
 
