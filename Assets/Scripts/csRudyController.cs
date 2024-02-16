@@ -105,7 +105,7 @@ public class csRudyController : MonoBehaviour
 
     private void Dash()
     {
-        audioSource.PlayOneShot(dashClip, 0.65f);
+        audioSource.PlayOneShot(dashClip, 0.55f);
 
         LeanTween.value(gameObject, UpdateDash, 1, 5, 0.1f).setEaseInOutCubic().setOnComplete(()=>
         {

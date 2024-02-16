@@ -232,7 +232,7 @@ public class csURUKManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1.0f / speedMultiplier);
 
-            audioSource.PlayOneShot(eatClip, 1.5f);
+            audioSource.PlayOneShot(eatClip, 1.75f);
 
             if (URUK_renderer.sprite == URUK_Eat_02)
             {
