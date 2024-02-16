@@ -80,19 +80,19 @@ public class csFlameDrop : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "House")
+        if (other.CompareTag("House") == true)
         {
             Destroy(gameObject);
         }
 
-        if (other.tag == "Floor")
+        if (other.CompareTag("Floor") == true)
         {
             Destroy(other.gameObject);
 
             Destroy(gameObject);
         }
 
-        if (other.tag == "Player")
+        if (other.CompareTag("Player") == true)
         {
             URUKManager.EndGame();
 

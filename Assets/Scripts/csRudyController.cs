@@ -10,6 +10,10 @@ public class csRudyController : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
+    [Header("Assigned")]
+
+    [SerializeField] private GameObject Bbaru;
+
     [Header("Parameters")]
 
     [SerializeField] private float speed;
@@ -17,6 +21,8 @@ public class csRudyController : MonoBehaviour
     [Header("Debug")]
 
     [SerializeField] private bool isMoving;
+
+    [SerializeField] private bool isBbaru;
 
     [SerializeField] private Vector3 velocity;
     [SerializeField] private float dashVelocityMultiplier;
@@ -107,5 +113,15 @@ public class csRudyController : MonoBehaviour
     private void Move()
     {
         transform.Translate((velocity * speed * dashVelocityMultiplier) * Time.deltaTime);
+    }
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bbaru") == true)
+        {
+            isBbaru = true;
+        }
     }
 }
