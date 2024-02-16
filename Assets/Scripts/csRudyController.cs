@@ -124,6 +124,16 @@ public class csRudyController : MonoBehaviour
 
     private void Move()
     {
+        if (Mathf.Abs((transform.position + velocity).x) > 11.9f)
+        {
+            velocity.x = 0;
+        }
+
+        if (Mathf.Abs((transform.position + velocity).z) > 5.9f)
+        {
+            velocity.z = 0;
+        }
+
         transform.Translate((velocity * speed * dashVelocityMultiplier) * Time.deltaTime);
     }
 

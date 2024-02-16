@@ -15,11 +15,22 @@ public class csBGMRandomizer : MonoBehaviour
 
     [SerializeField] private List<AudioClip> BGMs;
 
+    private static bool instanceExists;
+
 
 
     private void Awake()
     {
+        if (instanceExists == true)
+        {
+            Destroy(gameObject);
+
+            return;
+        }
+
         DontDestroyOnLoad(gameObject);
+
+        instanceExists = true;
     }
 
 
