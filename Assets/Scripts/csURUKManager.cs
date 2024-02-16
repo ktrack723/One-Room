@@ -81,7 +81,7 @@ public class csURUKManager : MonoBehaviour
 
         DetermineURUKFeeling();
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
 
         if (URUK_renderer.sprite == URUK_Happy)
         {
