@@ -22,7 +22,7 @@ public class csRudyController : MonoBehaviour
 
     [SerializeField] private bool isMoving;
 
-    [SerializeField] private bool isBbaru;
+    [SerializeField] private bool isHoldingBbaru;
 
     [SerializeField] private Vector3 velocity;
     [SerializeField] private float dashVelocityMultiplier;
@@ -39,6 +39,8 @@ public class csRudyController : MonoBehaviour
     private void Update()
     {
         ProcessMoveInput();
+
+        Bbaru.SetActive(isHoldingBbaru);
     }
 
 
@@ -119,9 +121,18 @@ public class csRudyController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Bbaru") == true)
+        if (other.CompareTag("Bbaru") == true && isHoldingBbaru == false)
         {
-            isBbaru = true;
+            isHoldingBbaru = true;
+
+            Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("House") == true && isHoldingBbaru == true)
+        {
+            isHoldingBbaru = false;
+
+            Destroy(other.gameObject);
         }
     }
 }

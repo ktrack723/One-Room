@@ -88,12 +88,7 @@ public class csURUKManager : MonoBehaviour
 
         for (int i = 0; i < flameCount; i++)
         {
-            yield return new WaitForSeconds(0.5f / speedMultiplier);
-
-            if (i == 0)
-            {
-                continue;
-            }
+            yield return new WaitForSeconds(0.75f / speedMultiplier);
 
             if (URUK_renderer.sprite == URUK_Eat_02)
             {
@@ -105,7 +100,7 @@ public class csURUKManager : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(0.5f / speedMultiplier);
+        yield return new WaitForSeconds(0.75f / speedMultiplier);
 
         URUK_renderer.sprite = URUK_Charge;
 
@@ -117,7 +112,7 @@ public class csURUKManager : MonoBehaviour
         {
             Instantiate(Flame_Rise, Anchor_Flame.transform.position, Quaternion.identity);
 
-            yield return new WaitForSeconds(1.0f / speedMultiplier);
+            yield return new WaitForSeconds(1.5f / speedMultiplier);
         }
 
         isFiring = false;

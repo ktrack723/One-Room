@@ -287,6 +287,7 @@ MonoBehaviour:
   Anchor_Flame: {fileID: 2098576989}
   Flame_Rise: {fileID: 9155342968542811601, guid: 5dc5cbbdb3e6c49dd9c0ee58e740812a,
     type: 3}
+  floors: []
   flameCount: 3
   isFiring: 0
 --- !u!1 &90570017
@@ -1334,7 +1335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &705056896
 Transform:
   m_ObjectHideFlags: 0
@@ -2089,7 +2090,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 877033372617224813, guid: fa933b67179cf4fa79ca2c55d70338ca,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1396309741}
   m_SourcePrefab: {fileID: 100100000, guid: fa933b67179cf4fa79ca2c55d70338ca, type: 3}
 --- !u!4 &1228484147 stripped
 Transform:
@@ -2181,6 +2186,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1396309738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 877033372617224813, guid: fa933b67179cf4fa79ca2c55d70338ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 1228484146}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1396309741
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396309738}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1, y: 1.1, z: 3}
+  m_Center: {x: 0, y: 0, z: -1.5}
 --- !u!1 &1482450612
 GameObject:
   m_ObjectHideFlags: 0
@@ -2465,8 +2497,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  Bbaru: {fileID: 705056895}
   speed: 3
   isMoving: 0
+  isHoldingBbaru: 0
   velocity: {x: 0, y: 0, z: 0}
   dashVelocityMultiplier: 1
 --- !u!54 &1629925176
@@ -2839,6 +2873,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bbaru_Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219762903860370770, guid: e3f605c7f033847318354b9d04ce105a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bbaru
       objectReference: {fileID: 0}
     - target: {fileID: 6370885150639937182, guid: e3f605c7f033847318354b9d04ce105a,
         type: 3}

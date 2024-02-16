@@ -136,7 +136,7 @@ MonoBehaviour:
   URUKManager: {fileID: 0}
   shadow: {fileID: 4611656432728273703, guid: 91800f0d330834ffb87cdeebfebe84b0, type: 3}
   dropSpeed: 3
-  smoothTime: 2
+  smoothTime: 1
   instancedShadow: {fileID: 0}
   currentVelocity: {x: 0, y: 0, z: 0}
   startHeight: 0
