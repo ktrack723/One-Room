@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e340ac385f42045edae808ee07c1a013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StageNumber: Stage01
   URUK_renderer: {fileID: 1133038398}
   URUK_Dumb: {fileID: 21300000, guid: 129362ba3378540d592232c1b645bd0b, type: 3}
   URUK_Eat_01: {fileID: 21300000, guid: 99d3cae3450c741d1a0392e3b963690a, type: 3}
@@ -282,7 +283,7 @@ MonoBehaviour:
   URUK_Fire_02: {fileID: 21300000, guid: fa4c9057833e64a7f9850a58dee34e5b, type: 3}
   URUK_Happy: {fileID: 21300000, guid: 5018efab3fb7e4584a2aa530321c0de5, type: 3}
   URUK_Sad: {fileID: 21300000, guid: a06f95290d4f54dde8ad55245bbdd5ca, type: 3}
-  Anchor_Flame: {fileID: 0}
+  Anchor_Flame: {fileID: 2098576989}
   Flame_Rise: {fileID: 0}
   flameCount: 0
   isFiring: 0
@@ -2067,6 +2068,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970514423086230347, guid: fa933b67179cf4fa79ca2c55d70338ca,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970514423086230347, guid: fa933b67179cf4fa79ca2c55d70338ca,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970514423086230347, guid: fa933b67179cf4fa79ca2c55d70338ca,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

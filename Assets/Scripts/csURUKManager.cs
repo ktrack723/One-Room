@@ -8,6 +8,8 @@ public class csURUKManager : MonoBehaviour
 {
     [Header("Assigned")]
 
+    [SerializeField] private string StageNumber;
+
     [SerializeField] private SpriteRenderer URUK_renderer;
 
     [SerializeField] private Sprite URUK_Dumb;
@@ -33,7 +35,7 @@ public class csURUKManager : MonoBehaviour
 
     private void Start()
     {
-        
+        StartCoroutine(StageNumber);
     }
 
 
@@ -57,7 +59,17 @@ public class csURUKManager : MonoBehaviour
 
     private IEnumerator Stage01()
     {
+        ShootFlameBy(3);
+
         return null;
+    }
+
+
+
+    private void ShootFlameBy(int arg)
+    {
+        flameCount = arg;
+        StartCoroutine("ShootFlame");
     }
 
 
