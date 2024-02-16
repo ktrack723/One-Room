@@ -55,7 +55,7 @@ public class csFlameDrop : MonoBehaviour
         instancedShadow.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
 
         // Drop
-        transform.Translate(Vector3.up * dropSpeed * Time.deltaTime);
+        transform.Translate(Vector3.down * dropSpeed * Time.deltaTime);
         instancedShadow.transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, transform.position.y / startHeight);
 
         if (transform.position.y < 2f)
