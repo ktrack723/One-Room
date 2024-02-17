@@ -245,6 +245,27 @@ public class csURUKManager : MonoBehaviour
 
 
 
+    private IEnumerator Stage_08()
+    {
+        yield return new WaitForSeconds(3 / speedMultiplier);
+
+        yield return StartCoroutine(ShootFlame(5));
+
+        yield return new WaitForSeconds(1 / speedMultiplier);
+
+        yield return StartCoroutine(ShootFlame(6));
+
+        yield return new WaitForSeconds(4.25f);
+
+        DetermineURUKFeeling();
+
+        yield return new WaitForSeconds(5 / speedMultiplier);
+
+        DetermineEnding();
+    }
+
+
+
     private IEnumerator ShootFlame(int arg)
     {
         flameCount = arg;
@@ -303,13 +324,13 @@ public class csURUKManager : MonoBehaviour
     {
         if (floors.Count == 1)
         {
-            audioSource.PlayOneShot(happyClip, 1.1f);
+            audioSource.PlayOneShot(happyClip, 1.35f);
 
             URUK_renderer.sprite = URUK_Happy;
         }
         else
         {
-            audioSource.PlayOneShot(sadClip, 1.1f);
+            audioSource.PlayOneShot(sadClip, 1.35f);
 
             URUK_renderer.sprite = URUK_Sad;
         }
