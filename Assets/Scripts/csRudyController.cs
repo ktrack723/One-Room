@@ -145,7 +145,7 @@ public class csRudyController : MonoBehaviour
         {
             isHoldingBbaru = true;
 
-            audioSource.PlayOneShot(getClip);
+            audioSource.PlayOneShot(getClip, 1.3f);
 
             Destroy(other.gameObject);
         }
