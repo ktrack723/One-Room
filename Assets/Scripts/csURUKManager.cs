@@ -134,7 +134,7 @@ public class csURUKManager : MonoBehaviour
 
         yield return StartCoroutine(ShootFlame(2));
 
-        yield return new WaitForSeconds(4.25f / speedMultiplier);
+        yield return new WaitForSeconds(4.25f);
 
         DetermineURUKFeeling();
 
@@ -159,7 +159,7 @@ public class csURUKManager : MonoBehaviour
 
         yield return StartCoroutine(ShootFlame(2));
 
-        yield return new WaitForSeconds(4.25f / speedMultiplier);
+        yield return new WaitForSeconds(4.25f);
 
         DetermineURUKFeeling();
 
@@ -184,7 +184,7 @@ public class csURUKManager : MonoBehaviour
 
         yield return StartCoroutine(ShootFlame(4));
 
-        yield return new WaitForSeconds(4.25f / speedMultiplier);
+        yield return new WaitForSeconds(4.25f);
 
         DetermineURUKFeeling();
 
@@ -209,7 +209,32 @@ public class csURUKManager : MonoBehaviour
 
         yield return StartCoroutine(ShootFlame(3));
 
-        yield return new WaitForSeconds(4.25f / speedMultiplier);
+        yield return new WaitForSeconds(4.25f);
+
+        DetermineURUKFeeling();
+
+        yield return new WaitForSeconds(5 / speedMultiplier);
+
+        DetermineEnding();
+    }
+
+
+
+    private IEnumerator Stage_07()
+    {
+        yield return new WaitForSeconds(3 / speedMultiplier);
+
+        yield return StartCoroutine(ShootFlame(6));
+
+        yield return new WaitForSeconds(1 / speedMultiplier);
+
+        yield return StartCoroutine(ShootFlame(4));
+
+        yield return new WaitForSeconds(1 / speedMultiplier);
+
+        yield return StartCoroutine(ShootFlame(3));
+
+        yield return new WaitForSeconds(4.25f);
 
         DetermineURUKFeeling();
 
@@ -246,11 +271,15 @@ public class csURUKManager : MonoBehaviour
 
         yield return new WaitForSeconds(1.0f / speedMultiplier);
 
+        audioSource.pitch = speedMultiplier;
+
         audioSource.PlayOneShot(chargeClip);
 
         URUK_renderer.sprite = URUK_Charge;
 
         yield return new WaitForSeconds(2.5f / speedMultiplier);
+
+        audioSource.pitch = 1.0f;
 
         isFiring = true;
 
